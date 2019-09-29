@@ -8,13 +8,11 @@ The goals / steps of this project are the following:
 * Apply these pipeline on Videos which are series of images.
 
 
-**Lane finding Pipeline **
+Lane finding Pipeline
 ---
 My pipeline consisted of 5 steps. 
 **Step 1:**  Read in the image into the memory and then covert in into grayscale.
 Image size here is 540x960 as a grayscale channeled image
-
-[//]: # (Image References)
 
 [image1]: ./test_images/solidYellowLeft_gray.jpg "Grayscale"
 
@@ -23,15 +21,14 @@ Image size here is 540x960 as a grayscale channeled image
 **Step 2:**  Blur the image and then Apply Canny edge detcetion.
 The parameters used for generalization here are: low_thresold :100 and High_thresold:200
 
-[//]: # (Image References)
-
 [image2]: ./test_images/solidYellowLeft_canny.jpg "Grayscale"
 
 ---
 **Step 3:**  Use the image output from canny edge detector and make the region of intereset.
 The method followed here is based on the truth that our road line lie under camera visible low boundary.
 For this I have used the corners of x-plane when y=540.
-then I have arranged a polygon to detect the lower bound of camera view.
+Then I have arranged a polygon to detect the lower bound of camera view.
+
 ---
 **Step 4:**  Apply Hough line transform to detect the line patterens in the ROI image.
 The parameters used in the Hough transform are as below:
@@ -39,8 +36,6 @@ rho =1, and theta = pi/180 whihc are generailzed values.
 Thresold = 50 ; min_line_length = 40; max_line_gap = 400
 These are the uniques parameters space for this task ,where I have suppressed the need for intrapolation or averaging of lines.
 Above parameters helped me to get the same sloped lines till the point of intereset.
-
-[//]: # (Image References)
 
 [image3]: ./test_images/solidYellowLeft_out.jpg "Grayscale"
 	
