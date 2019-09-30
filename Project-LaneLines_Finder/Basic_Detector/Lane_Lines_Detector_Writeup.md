@@ -14,14 +14,14 @@ My pipeline consisted of 5 steps.
 **Step 1:**  Read in the image into the memory and then covert in into grayscale.
 Image size here is 540x960 as a grayscale channeled image
 
-[image1]: ./test_images/solidYellowLeft_gray.jpg "Grayscale"
+!["Grayscale"]: (../master/test_images/solidYellowLeft_gray.jpg)
 
 ---
 
 **Step 2:**  Blur the image and then Apply Canny edge detcetion.
 The parameters used for generalization here are: low_thresold :100 and High_thresold:200
 
-[image2]: ./test_images/solidYellowLeft_canny.jpg "Grayscale"
+!["Canny"]: (../master/test_images/solidYellowLeft_canny.jpg)
 
 ---
 **Step 3:**  Use the image output from canny edge detector and make the region of intereset.
@@ -37,7 +37,7 @@ Thresold = 50 ; min_line_length = 40; max_line_gap = 400
 These are the uniques parameters space for this task ,where I have suppressed the need for intrapolation or averaging of lines.
 Above parameters helped me to get the same sloped lines till the point of intereset.
 
-[image3]: ./test_images/solidYellowLeft_out.jpg "Grayscale"
+![Lane_lines Detected]: (../master/test_images/solidYellowLeft_out.jpg)
 	
 ---
 
